@@ -32,7 +32,7 @@ Create a HTML file to implement form based input and output.
 Publish the website in the given URL.
 
 ## PROGRAM :
-'''
+
 bmi.html
 
 <html>
@@ -134,7 +134,7 @@ def calculate_bmi(request):
         bmi=weight/((height/100)**2)
         print(f"Weight: {weight}kg \nHeight: {height}cm \nBMI: {bmi}")
     return render(request, "mathapp/bmi.html",{"bmi": bmi, "height": height, "weight": weight})
-'''
+
 
 
 
