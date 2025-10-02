@@ -1,5 +1,5 @@
 # Ex.05 Design a Website for Server Side Processing
-## Date:
+## Date:02/10/2025
 
 ## AIM:
  To design a website to calculate the Body Mass Index (BMI) in the server side.
@@ -134,7 +134,6 @@ def calculate_bmi(request):
         bmi=weight/((height/100)**2)
         print(f"Weight: {weight}kg \nHeight: {height}cm \nBMI: {bmi}")
     return render(request, "mathapp/bmi.html",{"bmi": bmi, "height": height, "weight": weight})
-
 '''
 
 
