@@ -32,7 +32,7 @@ Create a HTML file to implement form based input and output.
 Publish the website in the given URL.
 
 ## PROGRAM :
-
+'''
 bmi.html
 
 <html>
@@ -109,17 +109,6 @@ bmi.html
 </body>
 </html>
 
-urls.py
-
-from django.contrib import admin
-from django.urls import path
-from mathapp import views
-
-urlpatterns=[
-    path('admin/', admin.site.urls),
-    path('',views.calculate_bmi,name='calculate_bmi'),
-]
-
 views.py
 
 from django.shortcuts import render
@@ -136,8 +125,19 @@ def calculate_bmi(request):
     return render(request, "mathapp/bmi.html",{"bmi": bmi, "height": height, "weight": weight})
 
 
+urls.py
+
+from django.contrib import admin
+from django.urls import path
+from mathapp import views
+
+urlpatterns=[
+    path('admin/', admin.site.urls),
+    path('',views.calculate_bmi,name='calculate_bmi'),
+]
 
 
+'''
 
 ## SERVER SIDE PROCESSING:
 ![alt text](Serverside.png)
