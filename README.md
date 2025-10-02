@@ -34,74 +34,72 @@ Publish the website in the given URL.
 ## PROGRAM :
 '''
 bmi.html
-
 <html>
     <head>
     <title>Body Mass Index</title>
     <style>
         body{
-            background-color: pink;
-            font-family: Arial, Helvetica, sans-serif;
+            backgroun-color:pink;
+            font-family:Arial,Helvetica, sans-serif;
         }
         .form{
-            border: 4px dotted purple;
-            width: 400px;
-            margin: 250px auto;
-            background-color: rgba(70, 6, 148, 0.5);
+            border:4px dotted purple;
+            width:400px;
+            margin:250px auto:
+            background-color:rgba(70,6,148,0.5);
             color:green;
-            padding: 10px 20px 20px 20px;
-            font-size: 15px;
+            padding:10px 20px 20px 20px;
+            font-size:15px;
         }
         .form h1,h3{
             color:cyan;
-            text-align: center;
+            text-align:center;
         }
         .form h3{
-            font-size: 25px;
+            font-size:25px;
         }
         .form label{
-            display: block;
+            display:block;
         }
         .input input{
-            border: 3px dotted purple; 
-            margin: 10px 0px 15px;
-            font-size: 20px ;
-            width: 100%;
-
+            border:3px dotted purple;
+            margin:10px 0px 15px;
+            font-size:20px;
+            width:100%;        
         }
         .btn{
-            text-align: center;
-            padding: auto;
-            margin-top: 10px;
-            margin-bottom: 10px;
+            text-align:center;
+            padding:auto;
+            margin-top:10px;
+            margin-bottom:10px;
         }
         button{
-            padding: 10px;
-            background-color: #83c5be;
+            padding:10px;
+            background:#83c5be;
         }
     </style>
     </head>
 <body>
     <div class="form">
-        <h1><b>BMI Calculator</b></h1>
-        <h3 >POORNIMA J (25015718)</h3>
-        <form method="post">
-        {% csrf_token %}
-        <div class="input">
+         <h1><b>BMI Calculator</b></h1>
+         <h3 >POORNIMA J (25015718)</h3>
+         <form method="post">
+         {% csrf_token %}
+         <div class="input">
             <label for="Weight">Weight in kg:</label>
             <input type="number" name="weight" required value="{{weight}}">
         </div>
         <div class="input">
-            <label for="Height">Height in cm:</label>
-            <input type="number" name="height" required value="{{height}}">
-        </div>
+        <label for="Height">Height in cm:</label>
+        <input type="number" name="height" required value="{{height}}">
+    </div>
         <div class="btn">
             <button type="submit"><b>Calculate</b></button>
         </div>
         </form>
         {% if bmi %}
         <div class="input">
-            <label for="bmi">BMI: </label>
+             <label for="bmi">BMI: </label>
             <input type="text" required value="{{bmi}}">
         </div>
         {% endif %}
@@ -124,19 +122,16 @@ def calculate_bmi(request):
         print(f"Weight: {weight}kg \nHeight: {height}cm \nBMI: {bmi}")
     return render(request, "mathapp/bmi.html",{"bmi": bmi, "height": height, "weight": weight})
 
-
 urls.py
 
 from django.contrib import admin
 from django.urls import path
 from mathapp import views
-
 urlpatterns=[
     path('admin/', admin.site.urls),
     path('',views.calculate_bmi,name='calculate_bmi'),
 ]
 '''
-
 
 ## SERVER SIDE PROCESSING:
 ![alt text](Serverside.png)
